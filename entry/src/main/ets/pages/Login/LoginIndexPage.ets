@@ -31,7 +31,7 @@ struct Login {
       this.token = resData?.data?.access_token
 
 
-      router.pushUrl({ url: 'pages/Index' })
+      router.replaceUrl({ url: 'pages/Index' })
 
     }
 

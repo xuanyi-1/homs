@@ -15,10 +15,10 @@ struct Index {
   onPageShow() {
     themeManager.enableFullScreen()
 
-
-    // if (!this.token) {
-    //   router.replaceUrl({ url: "pages/Login/LoginIndexPage", params: null });
-    // }
+    // 检查token，如果没有则跳转到登录页面
+    if (!this.token) {
+      router.replaceUrl({ url: "pages/Login/LoginIndexPage", params: null });
+    }
   }
 
   onPageHide() {

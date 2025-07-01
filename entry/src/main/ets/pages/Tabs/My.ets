@@ -1,4 +1,4 @@
-import router from '@ohos.router';
+import { router } from '@kit.ArkUI';
 
 @Component
 export struct My {
@@ -87,8 +87,10 @@ export struct My {
             .fontSize(16)
             .margin({ top: 30 })
             .onClick(() => {
-              // 退出登录逻辑
-              router.replaceUrl({ url: 'pages/Login' });
+              // 清除token
+              AppStorage.setOrCreate('token', '');
+              // 跳转到登录页面
+              router.replaceUrl({ url: 'pages/Login/LoginIndexPage' });
             })
         }
       }.scrollBar(BarState.Auto)
